@@ -13,6 +13,8 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'jbuilder'
+gem 'oj'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -20,8 +22,8 @@ gem 'puma', '~> 5.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'pry-byebug'
   gem 'dotenv-rails'
+  gem 'pry-byebug'
 
   gem 'rspec'
   gem 'rspec-rails'

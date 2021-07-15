@@ -21,9 +21,6 @@ Metrics/MethodLength:
   # EnforcedStyle: never
   # Enabled: true
 
-# Style/FrozenStringLiteralComment:
-  # EnforcedStyle: never
-
 Documentation:
   Enabled: false
 
