@@ -19,8 +19,6 @@ require 'action_view/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-
 module RecipiesRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -32,7 +30,9 @@ module RecipiesRails
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.eager_load_paths << Rails.root.join('lib/**/*')
+
+    Dotenv::Railtie.load
 
     # Oj initialization
     Oj.optimize_rails
