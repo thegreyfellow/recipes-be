@@ -18,5 +18,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "recipes-be-pl" #Must be unique in Heroku
           heroku_email: "youssef.idmoussi@gmail.com"
-          healthcheck: "https://recipes-be-pl.herokuapp.com/api/recipes"
 
