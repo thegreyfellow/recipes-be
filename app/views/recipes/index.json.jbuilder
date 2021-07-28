@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 recipes_array = []
 
 @recipes.each do |recipe|
