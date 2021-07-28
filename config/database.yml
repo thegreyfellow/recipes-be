@@ -24,7 +24,7 @@ default: &default
   # password: <%= ENV.fetch("DATABASE_PASSWORD") %>
   # host: <%= ENV.fetch("DATABASE_HOST") %>
   # port: <%= ENV.fetch("DATABASE_PORT") { 5432 } %>
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  url: <%= ENV["DATABASE_URL"] %>
 
 development:
   <<: *default
