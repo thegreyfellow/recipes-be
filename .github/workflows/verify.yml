@@ -21,42 +21,42 @@ jobs:
         run: |
           bundle exec bundler-audit --update
 
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:13-alpine
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_DB: recipies_rails_test
-          POSTGRES_PASSWORD: ""
-        ports: 
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5k
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup Ruby and install gems
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Setup test database
-        env:
-          RAILS_ENV: test
-          DATABASE_HOST: postgres
-          DATABASE_USERNAME: postgres
-          DATABASE_PASSWORD: ""
-          DATABASE_PORT: ${{ job.services.postgres.ports[5432] }}
-        run: |
-          bundle exec rails db:setup
-
-      - name: Run tests
-        run: bundle exec rspec
+  # tests:
+    # name: Tests
+    # runs-on: ubuntu-latest
+    # services:
+      # postgres:
+        # image: postgres:13-alpine
+        # env:
+          # POSTGRES_USER: postgres
+          # POSTGRES_DB: recipies_rails_test
+          # POSTGRES_PASSWORD: ""
+        # ports: 
+          # - 5432:5432
+        # options: >-
+          # --health-cmd pg_isready
+          # --health-interval 10s
+          # --health-timeout 5s
+          # --health-retries 5k
+# 
+    # steps:
+      # - name: Checkout code
+        # uses: actions/checkout@v2
+# 
+      # - name: Setup Ruby and install gems
+        # uses: ruby/setup-ruby@v1
+        # with:
+          # bundler-cache: true
+# 
+      # - name: Setup test database
+        # env:
+          # RAILS_ENV: test
+          # DATABASE_HOST: postgres
+          # DATABASE_USERNAME: postgres
+          # DATABASE_PASSWORD: ""
+          # DATABASE_PORT: ${{ job.services.postgres.ports[5432] }}
+        # run: |
+          # bundle exec rails db:setup
+# 
+      # - name: Run tests
+        # run: bundle exec rspec
