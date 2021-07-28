@@ -84,6 +84,5 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
   database: recipies_rails_production
   url: <%= ENV.fetch("DATABASE_URL") %>
