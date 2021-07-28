@@ -45,7 +45,7 @@ jobs:
       - name: Setup test database
         env:
           RAILS_ENV: test
-          DATABASE_HOST: localhost
+          DATABASE_HOST: "0.0.0.0"
           DATABASE_USERNAME: postgres
         run: |
           bundle exec rails db:setup
