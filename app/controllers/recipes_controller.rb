@@ -19,10 +19,11 @@ class RecipesController < ApplicationController
     limit = params[:per_page].to_i
     page = params[:page].to_i
     offset = [page - 1, 0].max * limit
+    ingredients = params[:ingredients] || []
 
-    @ingredients_with_percetage_signs = params[:ingredients].map { |val| "%#{val}%" }
+    @ingredients_with_percetage_signs = ingredients.map { |val| "%#{val}%" }
 
-    [limit, page, offset, params[:quantity], params[:difficulty]]
+    [limit, page, offset, params[:quantity], params[:difficulty], ingredients]
   end
 
   def build_query(people_quantity, difficulty, limit, offset)
