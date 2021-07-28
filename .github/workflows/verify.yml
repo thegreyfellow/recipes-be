@@ -19,7 +19,7 @@ jobs:
           bundle exec rubocop --parallel
       - name: Run security checks
         run: |
-          bin/bundler-audit --update
+          bundle exec bundler-audit --update
 
   tests:
     name: Tests
